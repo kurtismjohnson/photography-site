@@ -13,7 +13,10 @@
       <div class="logo">
         <a href="index.html"><img src="images/logo.png" alt="Kurtis Johnson Photography" /></a>
       </div>
-      <nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav">
         <a href="index.html">Portfolio</a>
         <a href="about.html" class="active">About</a>
         <a href="contact.html">Contact</a>
@@ -47,5 +50,13 @@
     <p>&copy; 2026 Kurtis Johnson Photography</p>
   </footer>
 
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
