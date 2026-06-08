@@ -1,0 +1,261 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  color: #111;
+  font-family: 'Georgia', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 24px 40px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+nav {
+  display: flex;
+  gap: 36px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  border-bottom-color: #111;
+}
+
+/* ── Gallery ── */
+main {
+  flex: 1;
+  padding: 40px;
+}
+
+.gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery-item {
+  position: absolute;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s;
+}
+
+.gallery-item img:hover {
+  opacity: 0.88;
+}
+
+/* ── About layout ── */
+.about-layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.about-photo {
+  flex: 0 0 340px;
+  margin-bottom: 24px;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-text {
+  flex: 1;
+}
+
+@media (max-width: 720px) {
+  .about-layout {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .about-photo {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* ── Inner pages ── */
+.page-content {
+  max-width: 680px;
+  margin: 80px auto;
+  padding: 0 40px;
+  line-height: 1.8;
+}
+
+.page-content h1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.page-content p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.page-content a {
+  color: #49a0b7;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.page-content a:hover {
+  border-bottom-color: #49a0b7;
+}
+
+/* Contact details */
+.contact-details {
+  margin: 28px 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.contact-form label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+  color: #111;
+  width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #111;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background: #444;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid #e0e0e0;
+  padding: 24px 40px;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #999;
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  header {
+    padding: 18px 20px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .gallery {
+    /* single column handled by JS */
+  }
+
+  .gallery-item {
+    margin-bottom: 8px;
+  }
+}
