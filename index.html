@@ -118,6 +118,13 @@
       else { img.addEventListener('load', onLoad); img.addEventListener('error', onLoad); }
     });
 
+    // Recalculate masonry when lazy-loaded images load
+    imgs.forEach(img => {
+      img.addEventListener('load', () => {
+        runMasonry();
+      });
+    });
+
     // Debounce resize so masonry waits for the browser to fully reflow
     let resizeTimer;
     window.addEventListener('resize', () => {
