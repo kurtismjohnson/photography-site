@@ -322,37 +322,9 @@ footer {
     padding: 12px;
   }
 
-  /* Portrait: single centered column */
-  .gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
+  /* Portrait: single column — masonry JS handles positioning */
   .gallery-item {
-    width: 100% !important;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
     margin-bottom: 10px;
   }
 }
 
-/* Landscape phones: 2-column grid */
-@media (max-width: 768px) and (orientation: landscape) {
-  .gallery {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    flex-direction: unset;
-    align-items: unset;
-  }
-
-  .gallery-item {
-    width: 100% !important;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    margin-bottom: 0;
-  }
-}
