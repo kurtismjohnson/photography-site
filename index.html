@@ -79,7 +79,8 @@
     function runMasonry() {
       const gallery = document.querySelector('.gallery');
       const items = Array.from(gallery.querySelectorAll('.gallery-item'));
-      const gap = 12;
+      const isMobile = window.innerWidth <= 768;
+      const gap = isMobile ? 8 : 12;
 
       let cols = 3;
       const isLandscape = window.innerWidth > window.innerHeight;
@@ -93,9 +94,10 @@
       gallery.style.position = 'relative';
 
       items.forEach(item => {
-        const shortest = colHeights.indexOf(Math.min(...colHeights));
+        // Force correct width before measuring height
         item.style.position = 'absolute';
         item.style.width = colWidth + 'px';
+        const shortest = colHeights.indexOf(Math.min(...colHeights));
         item.style.left = (shortest * (colWidth + gap)) + 'px';
         item.style.top = colHeights[shortest] + 'px';
         colHeights[shortest] += item.offsetHeight + gap;
@@ -116,7 +118,12 @@
       else { img.addEventListener('load', onLoad); img.addEventListener('error', onLoad); }
     });
 
-    window.addEventListener('resize', runMasonry);
+    // Debounce resize so masonry waits for the browser to fully reflow
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(runMasonry, 150);
+    });
   </script>
 
 </body>
