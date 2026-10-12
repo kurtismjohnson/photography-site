@@ -179,6 +179,11 @@ main {
   margin-bottom: 20px;
 }
 
+/* Wider column so the Tally form lays out like it does in the editor */
+.contact-content {
+  max-width: 900px;
+}
+
 .page-content a {
   color: #49a0b7;
   text-decoration: none;
