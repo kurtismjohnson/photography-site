@@ -82,7 +82,7 @@ nav a {
   text-decoration: none;
   color: #111;
   font-family: 'Lora', Georgia, serif;
-  font-size: 0.8rem;
+  font-size: calc(0.8rem - 1px);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding-bottom: 2px;
@@ -159,14 +159,14 @@ main {
 
 /* ── Inner pages ── */
 .page-content {
-  max-width: 680px;
+  max-width: 840px;
   margin: 80px auto;
   padding: 0 40px;
   line-height: 1.8;
 }
 
 .page-content h1 {
-  font-size: 1.6rem;
+  font-size: calc(1.6rem - 1px);
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -174,7 +174,7 @@ main {
 }
 
 .page-content p {
-  font-size: 1rem;
+  font-size: calc(1rem - 1px);
   color: #333;
   margin-bottom: 20px;
 }
@@ -266,7 +266,7 @@ footer {
   text-align: center;
   font-family: 'Work Sans', sans-serif;
   font-weight: 300;
-  font-size: 0.75rem;
+  font-size: calc(0.75rem - 1px);
   letter-spacing: 0.12em;
   color: #999;
 }
@@ -310,7 +310,7 @@ footer {
   nav a {
     padding: 14px 24px;
     border-bottom: none;
-    font-size: 0.85rem;
+    font-size: calc(0.85rem - 1px);
   }
 
   nav a:hover {
